@@ -8,7 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    {{$art}}
+
+    <ul>
+        @foreach($arts as $art)
+            <li>{{ $art->title}}</li>
+            <li>{{$art->description}}</li>
+        @endforeach
+    </ul>
 
 </body>
 </html>
