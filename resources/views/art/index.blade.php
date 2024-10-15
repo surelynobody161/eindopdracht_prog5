@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1>{{$id}}</h1>
+    {{$art}}
+
 </body>
 </html>

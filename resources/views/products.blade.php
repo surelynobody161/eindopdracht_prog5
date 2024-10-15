@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1>{{$id}}</h1>
 <a href="{{ route('contact') }}">Ga naar contact</a>
 </body>
 </html>
