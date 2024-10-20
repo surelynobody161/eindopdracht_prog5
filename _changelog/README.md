@@ -78,6 +78,14 @@
 # 15 oktober
 > database rij aangemaakt in phpstorm
 
-> 
+> migration aangemaakt 
 
+> breeze opnieuw geinstalleerd 
+
+# 17 oktober
+> ERD bijgewerkt 
+
+> models aangemaakt en een form werkend gekregen met de database 
+
+> comments model aangemaakt   
 
