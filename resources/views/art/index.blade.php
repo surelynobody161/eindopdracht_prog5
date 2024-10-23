@@ -11,14 +11,14 @@
 
     <ul>
         @foreach($arts as $art)
-            <li>{{ $art->title}}</li>
-            <li>{{$art->description}}</li>
+            <div>
+                <h2>{{ $art->title }}</h2>
+                <p>{{ $art->description }}</p>
 
-
-            <li>
                 <img src="{{ asset('storage/' . $art->art) }}" alt="{{ $art->title }}" style="max-width: 200px; height: auto;">
-            </li>
+            </div>
         @endforeach
+
     </ul>
 
 </body>
