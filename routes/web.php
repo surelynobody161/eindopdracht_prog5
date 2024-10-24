@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\ArtsController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,13 +32,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/categories', CategoryController::class);
-    Route::post('/logout', [CheckerController::class, 'destroy'])->name('logout');
+
 
 });
 Route::resource('/arts', controller: ArtsController::class);
-Route::get('/login', [CheckerController::class, 'create'])->name('login');
-
-Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 
 
