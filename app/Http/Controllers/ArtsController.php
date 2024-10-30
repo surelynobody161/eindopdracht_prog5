@@ -36,8 +36,11 @@ class ArtsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $art = Art::findOrFail($id);
+        return view('arts.show', compact('art'));
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

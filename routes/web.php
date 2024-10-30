@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('/arts', controller: ArtsController::class);
 Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/arts/{id}', [ArtsController::class, 'show'])->name('arts.show');
+
 
 
 

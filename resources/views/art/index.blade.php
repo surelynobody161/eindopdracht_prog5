@@ -35,15 +35,12 @@
             <div class="bg-gray-800 shadow-lg rounded-lg p-6">
                 <h2 class="text-2xl font-semibold text-white mb-4">{{ $art->title }}</h2>
 
-                <!-- Truncate Description -->
                 <p class="text-gray-400 mb-4 truncate-text">
                     {{ Str::limit($art->description, 100) }}
                 </p>
 
-                <!-- Image -->
                 <img src="{{ asset('storage/' . $art->art) }}" alt="{{ $art->title }}" class="w-full h-auto rounded-lg mb-4">
 
-                <!-- Details Button -->
                 <a href="{{ route('arts.show', $art->id) }}" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300">Details</a>
             </div>
         @endforeach
