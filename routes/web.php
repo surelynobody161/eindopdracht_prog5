@@ -33,13 +33,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/categories', CategoryController::class);
     Route::get('/arts', [ArtsController::class, 'index'])->name('arts.index');
-
+    Route::get('/arts/{id}', [ArtsController::class, 'show'])->name('arts.show');
 
 
 });
 Route::resource('/arts', controller: ArtsController::class);
 Route::get('/about', [AboutController::class, 'about'])->name('about');
-Route::get('/arts/{id}', [ArtsController::class, 'show'])->name('arts.show');
+
 
 
 
