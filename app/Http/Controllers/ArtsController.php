@@ -10,10 +10,14 @@ class ArtsController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Art::query();
-        if (Auth::user()->role !== 'user') {
-            abort(403, 'je bent een user je mag hier niet komen.');
-        }
+//        if (!Auth::check() || Auth::user()->role !== 'user') {
+//            abort(403, 'Je mag hier niet komen.');
+//        }
+//
+    $query = Art::query();
+//        if (Auth::user()->role !== 'user') {
+//            abort(403, 'je bent een user je mag hier niet komen.');
+//        }
 
         $search = $request->input('search');
         $categoryId = $request->input('category_id');
