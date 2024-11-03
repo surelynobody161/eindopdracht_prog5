@@ -35,6 +35,8 @@ class ArtsController extends Controller
         return view('art.index', compact('arts'));
     }
 
+
+
     public function create()
     {
         //
