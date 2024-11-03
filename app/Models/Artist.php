@@ -1,26 +1,23 @@
 <?php
 
-// app/Http/Controllers/ToggleController.php
+namespace App\Models;
 
-namespace App\Http\Controllers;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Artist; // Ensure this line is present to import the Artist model
-use Illuminate\Http\Request;
-
-class ToggleController extends Controller
+class Artist extends Model
 {
-    public function __construct()
-    {
-        $this->middleware('auth'); // Apply authentication middleware
-    }
 
-    public function toggleStatus($id)
-    {
-        $artist = Artist::findOrFail($id);
-        $artist->is_alive = !$artist->is_alive; // Toggle the status
-        $artist->save();
 
-        return redirect()->back()->with('success', 'Artist status updated successfully.');
-    }
+    // If you have a 'fillable' property, define it here
+    protected $fillable = [
+        'title',
+        'description',
+        'category_id',
+        'created_by',
+        'art',
+        'is_alive',
+    ];
+
+    // Other model methods and relationships can go here
 }
-
