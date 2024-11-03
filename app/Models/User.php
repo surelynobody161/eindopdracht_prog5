@@ -13,6 +13,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     public mixed $role;
+    public mixed $is_admin;
 
     /**
      * The attributes that are mass assignable.

@@ -35,7 +35,6 @@
             <label>
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Search for paintings..." class="px-4 py-2 rounded bg-gray-800 text-gray-100 w-full">
             </label>
-
             <label>
                 <select name="category_id" class="px-4 py-2 rounded bg-gray-800 text-gray-100">
                     <option value="">All Categories</option>
@@ -44,7 +43,6 @@
                     <option value="3" {{ request('category_id') == '3' ? 'selected' : '' }}>Modern Art</option>
                 </select>
             </label>
-
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Filter</button>
         </form>
     </div>

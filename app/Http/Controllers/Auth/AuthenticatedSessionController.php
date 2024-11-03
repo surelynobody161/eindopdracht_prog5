@@ -24,6 +24,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        // Check user role and redirect accordingly
         if (Auth::user()->isAdmin()) {
             return redirect()->route('admin.dashboard');
         }
@@ -40,6 +41,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/arts');
+        return redirect()->route('arts.index');
     }
+
 }
