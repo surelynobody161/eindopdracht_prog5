@@ -22,6 +22,48 @@
 # 14 oktokber
 > afwezig
 
+ # 15 oktober
+> database rij aangemaakt in phpstorm
+
+> migration aangemaakt
+
+> breeze opnieuw geinstalleerd
+
+# 17 oktober
+> ERD bijgewerkt
+
+> models aangemaakt en een form werkend gekregen met de database
+
+> comments model aangemaakt
+
+# 19 oktober
+> database beter gemaakt.
+
+> nieuwe validaties toegevoegd aan formulieren.
+
+> rollen ingesteld voor admin en user rechten.
+
+> homepagina layout verbeterd .
+
+# 23 oktober
+> tests uitgevoerd voor de registratie- en inlogfunctionaliteiten.
+
+> beveiliging toegevoegd tegen brute-force aanvallen bij login.
+
+# 28 oktober
+> contactformulier uitgebreid met validatie voor verplichte velden.
+
+> blade-template updates gedaan voor een betere look.
+
+
+# 1 november
+> nieuwe migraties toegevoegd voor extra kunstwerken.
+
+> foutmeldingen bij formulierinvoer duidelijker gemaakt voor gebruikers.
+
+> zoekfunctie uitgebreid met filteropties voor categorie.
+
+
 > user stories aangemaakt
 # Userstories 
 
@@ -75,17 +117,5 @@
 
 ![ERD.png](images/ERD.png)
 
-# 15 oktober
-> database rij aangemaakt in phpstorm
-
-> migration aangemaakt 
-
-> breeze opnieuw geinstalleerd 
-
-# 17 oktober
-> ERD bijgewerkt 
-
-> models aangemaakt en een form werkend gekregen met de database 
-
-> comments model aangemaakt   
+ 
 

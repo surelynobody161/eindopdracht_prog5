@@ -8,11 +8,9 @@ use Illuminate\Support\Facades\Auth; // Import Auth facade
 
 class ToggleController extends Controller
 {
-    // No constructor needed since we're not using middleware
 
     public function toggleStatus($id)
     {
-        // Check if the user is authenticated
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', 'You must be logged in to perform this action.');
         }
