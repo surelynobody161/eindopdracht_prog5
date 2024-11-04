@@ -11,9 +11,7 @@ class ToggleController extends Controller
 
     public function toggleStatus($id)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'You must be logged in to perform this action.');
-        }
+
 
         // Find the artist by ID
         $artist = Artist::findOrFail($id);

@@ -21,7 +21,7 @@
                 </form>
             </div>
         @else
-            <div><a href="{{route('about')}}" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300">About</a></div>
+            <div><a href="{{ route('about') }}" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300">About</a></div>
             <div><a href="{{ route('login') }}" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300">Login</a></div>
             <div><a href="{{ route('register') }}" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300">Register</a></div>
         @endif
@@ -50,11 +50,21 @@
         @foreach($arts as $art)
             <div class="bg-gray-800 shadow-lg rounded-lg p-6">
                 <h2 class="text-2xl font-semibold text-white mb-4">{{ $art->title }}</h2>
-                <p class="text-gray-400 mb-4 truncate-text">
-                    {{ Str::limit($art->description, 100) }}
-                </p>
+                <p class="text-gray-400 mb-4 truncate-text">{{ Str::limit($art->description, 100) }}</p>
                 <img src="{{ asset('storage/' . $art->art) }}" alt="{{ $art->title }}" class="w-full h-auto rounded-lg mb-4">
+
+                <!-- Details Button -->
                 <a href="{{ route('arts.show', $art->id) }}" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-300">Details</a>
+
+                <!-- Toggle Button for is_alive status -->
+                @auth
+                    <form method="POST" action="{{ route('artists.toggleStatus', $art->id) }}" class="mt-4">
+                        @csrf
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                            {{ $art->is_alive ? 'Markeer als Overleden' : 'Markeer als Levend' }}
+                        </button>
+                    </form>
+                @endauth
             </div>
         @endforeach
     </ul>
