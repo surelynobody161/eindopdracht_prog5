@@ -7,18 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Art extends Model
 {
-    /**
-     * @var bool|mixed
-     */
-    public mixed $is_for_sale;
+    use HasFactory; // Vergeet niet de factory te gebruiken
+
     protected $table = 'arts';
+
     protected $fillable = [
         'title',
         'description',
         'category_id',
         'created_by',
         'art',
-        'is_alive',
+        'artist_id', // artist_id is goed opgenomen
     ];
 
+    public function artist(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Artist::class, 'artist_id'); // 'artist_id' is de kolom in de arts tabel
+    }
 }

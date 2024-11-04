@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
 
-
-    // If you have a 'fillable' property, define it here
+    protected $table = 'artists';
     protected $fillable = [
         'title',
         'description',
@@ -17,7 +16,16 @@ class Artist extends Model
         'created_by',
         'art',
         'is_alive',
+        'created_at',
+        'updated_at'
     ];
 
-    // Other model methods and relationships can go here
+    public static function create(array $array)
+    {
+    }
+
+    public function arts(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Art::class, 'artist_id');
+    }
 }

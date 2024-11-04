@@ -21,10 +21,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/categories', CategoryController::class);
+    Route::get('/arts/{id}', [ArtsController::class, 'show'])->name('arts.show');
 });
 //guest rules
 Route::get('/arts', [ArtsController::class, 'index'])->name('arts.index');
-Route::get('/arts/{id}', [ArtsController::class, 'show'])->name('arts.show');
+
 
 Route::get('/', function () {
     return view('welcome');
